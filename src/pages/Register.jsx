@@ -39,6 +39,7 @@ function Register() {
       email: email,
       password: password
     }
+    console.log(data);
     try {
       axios
         .post("https://typeracer-backend.onrender.com/api/users/signup", data)

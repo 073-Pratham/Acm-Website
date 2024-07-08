@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import EventCard from "../components/EventCard";
 import Nav from "../components/Nav";
+import axios from "axios";
 
 function Events() {
   const events = [
@@ -45,6 +46,16 @@ function Events() {
     },
   ];
 
+  // useEffect(async() => {
+  //   axios.get("http://localhost:3000/api/events", data).then((res) => {
+  //     if (res.status === 201) {
+  //       clearForm();
+  //     }
+  //   });
+  //   const events = await axios.get("https://typeracer-backend.onrender.com/api/events");
+  //   console.log("events", events);
+  // }, [])
+  
   return (
     <div className="bg-off-white">
       <Nav />

@@ -2,11 +2,15 @@ import { useState } from "react";
 import Nav from "../components/Nav";
 import { FiMail } from "react-icons/fi"; // Import email icon from react-icons library
 import { useLogin } from "../components/contexts/LoginContext";
+import { useNavigate } from "react-router-dom";
+import { useEffect } from "react";
+
 
 const ProfilePage = () => {
   const [isEditing, setIsEditing] = useState(false);
+  const navigate = useNavigate();
 
-  const {loginData} = useLogin();
+  const {loginData, addLogin} = useLogin();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -14,10 +18,34 @@ const ProfilePage = () => {
     setIsEditing(false); // Disable editing mode after submission
   };
 
-  // Function to handle input changes
+  const handleLogout = (e) => {
+    e.preventDefault();
+    alert("You've been logged out successfully!");
+    localStorage.clear();
+    addLogin({
+      data: {
+        token: "",
+        email: "",
+        name: "",
+        role: "",
+        status: false
+      },
+    });
+    
+    navigate("/");
+  };
+
   const handleChange = (e) => {
     const { name, value } = e.target;
   };
+
+  const {status} = loginData;
+  useEffect(() => {
+    if(status === false) {
+      navigate("/");
+    }
+  }, [status])
+  
 
   return (
     <div className="bg-off-white min-h-screen">
@@ -165,6 +193,16 @@ const ProfilePage = () => {
             <FiMail className="text-2xl text-gray-700 mr-2" />
             <p className="text-gray-700">{loginData.email}</p>
           </div>
+          <div className="flex justify-end">
+          <button
+            type="button"
+            onClick={handleLogout}
+            className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
+          >
+            logout
+          </button>
+        </div>
+
         </form>
       </div>
     </div>
