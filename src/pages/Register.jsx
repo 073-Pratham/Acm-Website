@@ -42,7 +42,7 @@ function Register() {
     console.log(data);
     try {
       axios
-        .post("https://typeracer-backend.onrender.com/api/users/signup", data)
+        .post("http://18.61.83.114/api/users/signup", data)
         .then((response) => {
           const curData = response.data;
           console.log("data", curData);

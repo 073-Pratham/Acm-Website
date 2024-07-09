@@ -39,7 +39,7 @@ function Login() {
     };
 
     axios
-      .post("https://typeracer-backend.onrender.com/api/users/login", data)
+      .post("http://18.61.83.114/api/users/login", data)
       .then((response) => {
         console.log(response, response.status);
         if (response.status === 200) {
