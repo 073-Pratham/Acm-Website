@@ -4,7 +4,7 @@ import Nav from "../components/Nav";
 
 const About = () => {
   return (
-    <div className="bg-off-white min-h-screen">
+    <div className="min-h-screen">
       <Nav />
       <section className="flex h-screen items-center justify-center">
         <div className="max-w-4xl mx-auto px-4 w-full sm:w-3/4 lg:w-2/3">

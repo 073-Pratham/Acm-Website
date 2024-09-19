@@ -6,11 +6,13 @@ export const useLogin = () => {
 
 const LoginContext = createContext({
   loginData: {
+    id: "",
     name: "",
     email: "",
-    role: "",
+    dob: "",
+    gender: "",
     token: "",
-    status: false
+    status: ""
   },
   addLogin: (data) => {
     console.log("data", data);
@@ -37,6 +39,7 @@ export const LoginProvider = ({ children }) => {
     const loginInfo = data.data;
     setLoginData(loginInfo);
     try {
+      console.log("Hiii", loginInfo)
       localStorage.setItem("loginData", JSON.stringify(loginInfo));
     } catch (error) {
       console.error("Failed to store login data in local storage:", error);

@@ -4,7 +4,7 @@ import Nav from "../components/Nav";
 
 const TeamPage = () => {
   return (
-    <div className="bg-off-white">
+    <div className="">
       <Nav />
       <div className="flex h-48 items-center justify-center">
         <span className="font-black text-green-1000 text-8xl uppercase">

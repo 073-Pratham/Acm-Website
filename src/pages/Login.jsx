@@ -39,19 +39,21 @@ function Login() {
     };
 
     axios
-      .post("http://18.61.83.114/api/users/login", data)
+      .post("https://backend.infotrek24.tech/api/users/login", data)
       .then((response) => {
+        console.log("Response")
         console.log(response, response.status);
         if (response.status === 200) {
           const curData = response.data;
-
           addLogin({
             data: {
+              id: curData.data.id,
               token: curData.token,
               email: email,
               name: curData.data.name,
-              role: curData.data.role,
-              status: true,
+              dob: curData.data?.dob,
+              gender: curData.data?.gender,
+              status: true
             },
           });
           setLoggedIn(true);

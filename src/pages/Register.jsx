@@ -42,16 +42,19 @@ function Register() {
     console.log(data);
     try {
       axios
-        .post("http://18.61.83.114/api/users/signup", data)
+        .post("https://backend.infotrek24.tech/api/users/signup", data)
         .then((response) => {
           const curData = response.data;
           console.log("data", curData);
           addLogin({  
             data: {
+              id: curData.data.id,
               token: curData.token,
               email: email,
-              name: curData.data.name,
               role: "user",
+              name: curData.data.name,
+              dob: curData.data?.dob,
+              gender: curData.data?.gender,
               status: true
             }
            });
