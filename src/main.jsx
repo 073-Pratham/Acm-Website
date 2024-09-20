@@ -16,6 +16,7 @@ import { LoginProvider } from "./components/contexts/LoginContext.jsx";
 import About from "./pages/About.jsx";
 import ProfilePage from "./pages/ProfilePage.jsx";
 import NotFound from "./pages/NotFound.jsx";
+import TeamPages from "./pages/TeamPages.jsx";
 
 const router = createBrowserRouter([
   {
@@ -40,7 +41,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/team",
-    element: <TeamPage />,
+    element: <TeamPages />,
   },
   {
     path: "/about",
