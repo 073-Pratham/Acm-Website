@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Nav from "../components/Nav";
-import { FiMail } from "react-icons/fi"; // Import email icon from react-icons library
+import { FiMail } from "react-icons/fi"; 
 import { useLogin } from "../components/contexts/LoginContext";
 import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";

@@ -41,3 +41,11 @@
   left: 120px;
   transform: rotate(25deg);
 }
+
+@media only screen and (max-width: 768px) {
+  .img-1, .img-2, .img-3, .img-4, .img-5, .img-6{
+    height: 0px;
+    width: 0px;
+    visibility: hidden;
+  }
+}
